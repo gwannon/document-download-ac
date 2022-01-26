@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: document-download-ac\n"
+"POT-Creation-Date: 2022-01-25 16:29+0100\n"
+"PO-Revision-Date: 2022-01-25 16:29+0100\n"
+"Last-Translator: \n"
+"Language-Team: jorge@enutt.net\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3\n"
+"X-Poedit-KeywordsList: _;_e;__\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../admin.php:6
+msgid "Descargas AC"
+msgstr ""
+
+#: ../admin.php:15
+msgid "Descargas  Active Campaign"
+msgstr ""
+
+#: ../admin.php:17
+msgid "Datos guardados correctamente."
+msgstr ""
+
+#: ../admin.php:35
+msgid "Configuración"
+msgstr ""
+
+#: ../admin.php:36
+msgid "Etiquetas disponibles"
+msgstr ""
+
+#: ../admin.php:37
+msgid "Listas disponibles"
+msgstr ""
+
+#: ../admin.php:38
+msgid "Automatizaciones disponibles"
+msgstr ""
+
+#: ../admin.php:39
+msgid "Ficheros"
+msgstr ""
+
+#: ../admin.php:90
+msgid "Media"
+msgstr ""
+
+#: ../admin.php:94
+msgid "URL del WordPress donde se almacenarán los ficheros a descargar"
+msgstr ""
+
+#: ../admin.php:102
+msgid "Active Campaign"
+msgstr ""
+
+#: ../admin.php:106
+msgid "URL de la API de Active Campaign"
+msgstr ""
+
+#: ../admin.php:114
+msgid "Token de la API de Active Campaign"
+msgstr ""
+
+#: ../admin.php:122
+msgid "Prefijos etiquetas permitidas"
+msgstr ""
+
+#: ../admin.php:125 ../admin.php:137 ../admin.php:145
+msgid "Separados por comas"
+msgstr ""
+
+#: ../admin.php:130
+msgid "Código corto"
+msgstr ""
+
+#: ../admin.php:134
+msgid "ID de la automatización por defecto"
+msgstr ""
+
+#: ../admin.php:142
+msgid "ID de la lista por defecto"
+msgstr ""
+
+#: ../admin.php:150
+msgid "Google Sheets"
+msgstr ""
+
+#: ../admin.php:154
+msgid "ID documento de Google Sheet"
+msgstr ""
+
+#: ../admin.php:162
+msgid "ID de página del documento de Google Sheet"
+msgstr ""
+
+#: ../admin.php:170
+msgid "Google Sheets Service Key"
+msgstr ""
+
+#: ../admin.php:180
+msgid "Diseño"
+msgstr ""
+
+#: ../admin.php:184
+msgid "Código CSS"
+msgstr ""
+
+#: ../admin.php:192
+msgid "Guardar"
+msgstr ""
+
+#: ../document-download-ac.php:51
+msgid "Nombre*"
+msgstr ""
+
+#: ../document-download-ac.php:52
+msgid "Apellidos*"
+msgstr ""
+
+#: ../document-download-ac.php:53
+msgid "Tu email*"
+msgstr ""
+
+#: ../document-download-ac.php:54
+msgid "DNI"
+msgstr ""
+
+#: ../document-download-ac.php:55
+msgid "Empresa*"
+msgstr ""
+
+#: ../document-download-ac.php:56
+msgid "CIF"
+msgstr ""
+
+#: ../document-download-ac.php:57
+msgid "Ciudad*"
+msgstr ""
+
+#: ../document-download-ac.php:58
+msgid "Provincia*"
+msgstr ""
+
+#: ../document-download-ac.php:59
+msgid "País*"
+msgstr ""
+
+#: ../document-download-ac.php:60
+msgid "Acepto la <a href='' target='_blank'>politica de privacidad</a>."
+msgstr ""
+"Acepto la <a href='/politica-de-privacidad/' target='_blank'>politica de "
+"privacidad</a>."
+
+#: ../document-download-ac.php:61
+msgid "Descargar"
+msgstr ""
+
+#: ../document-download-ac.php:167
+msgid ""
+"Lo sentimos, ha ocurrido un error. Vuelve a intentarlo dentro de un rato."
+msgstr ""
+
+#: ../document-download-ac.php:259
+msgid ""
+"Muchas gracias, en unos minutos recibirá un email para poder descargar el "
+"documento."
+msgstr ""
