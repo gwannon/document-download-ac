@@ -11,10 +11,19 @@
  * Text Domain: doc_download_ac
  *
  * PHP 7.3
- * WordPress 5.5.3
+ * WordPress 5.9
  */
 
 ini_set("display_errors", 1);
+
+
+register_activation_hook( __FILE__, 'docDownloadAcActivatePlugin');
+function docDownloadAcActivatePlugin() {
+  if (!file_exists(dirname(__FILE__).'/logs/')) {
+    mkdir(dirname(__FILE__).'/logs/', 0777, true);
+  }
+}
+
  
 function docDownloadAcPluginsLoaded() {
   load_plugin_textdomain('doc_download_ac', false, dirname( plugin_basename( __FILE__ ) ) . '/langs/' );

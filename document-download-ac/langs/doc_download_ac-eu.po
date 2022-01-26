@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: document-download-ac\n"
-"POT-Creation-Date: 2022-01-25 16:33+0100\n"
-"PO-Revision-Date: 2022-01-25 16:34+0100\n"
+"POT-Creation-Date: 2022-01-26 15:19+0100\n"
+"PO-Revision-Date: 2022-01-26 15:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: jorge@enutt.net\n"
 "Language: eu_ES\n"
@@ -115,56 +115,284 @@ msgstr ""
 msgid "Guardar"
 msgstr ""
 
-#: ../document-download-ac.php:51
+#: ../document-download-ac.php:61
 msgid "Nombre*"
 msgstr ""
 
-#: ../document-download-ac.php:52
+#: ../document-download-ac.php:62
 msgid "Apellidos*"
 msgstr ""
 
-#: ../document-download-ac.php:53
-msgid "Tu email*"
+#: ../document-download-ac.php:64
+msgid "Email*"
 msgstr ""
 
-#: ../document-download-ac.php:54
+#: ../document-download-ac.php:66
 msgid "DNI"
 msgstr ""
 
-#: ../document-download-ac.php:55
+#: ../document-download-ac.php:67
 msgid "Empresa*"
 msgstr ""
 
-#: ../document-download-ac.php:56
+#: ../document-download-ac.php:68
 msgid "CIF"
 msgstr ""
 
-#: ../document-download-ac.php:57
-msgid "Ciudad*"
+#: ../document-download-ac.php:70
+msgid "País"
 msgstr ""
 
-#: ../document-download-ac.php:58
+#: ../document-download-ac.php:71
+msgid "España"
+msgstr ""
+
+#: ../document-download-ac.php:72
+msgid "Francia"
+msgstr ""
+
+#: ../document-download-ac.php:73
+msgid "Alemania"
+msgstr ""
+
+#: ../document-download-ac.php:74
+msgid "Portugal"
+msgstr ""
+
+#: ../document-download-ac.php:77
+msgid "Provincia"
+msgstr ""
+
+#: ../document-download-ac.php:78
+msgid "Araba/Álava"
+msgstr ""
+
+#: ../document-download-ac.php:79
+msgid "Albacete"
+msgstr ""
+
+#: ../document-download-ac.php:80
+msgid "Alicante-Alacant"
+msgstr ""
+
+#: ../document-download-ac.php:81
+msgid "Almería"
+msgstr ""
+
+#: ../document-download-ac.php:82
+msgid "Asturias"
+msgstr ""
+
+#: ../document-download-ac.php:83
+msgid "Ávila"
+msgstr ""
+
+#: ../document-download-ac.php:84
+msgid "Badajoz"
+msgstr ""
+
+#: ../document-download-ac.php:85
+msgid "Barcelona"
+msgstr ""
+
+#: ../document-download-ac.php:86
+msgid "Burgos"
+msgstr ""
+
+#: ../document-download-ac.php:87
+msgid "Cáceres"
+msgstr ""
+
+#: ../document-download-ac.php:88
+msgid "Cádiz"
+msgstr ""
+
+#: ../document-download-ac.php:89
+msgid "Cantabria"
+msgstr ""
+
+#: ../document-download-ac.php:90
+msgid "Castellón-Castelló"
+msgstr ""
+
+#: ../document-download-ac.php:91
+msgid "Ceuta"
+msgstr ""
+
+#: ../document-download-ac.php:92
+msgid "Ciudad Real"
+msgstr ""
+
+#: ../document-download-ac.php:93
+msgid "Córdoba"
+msgstr ""
+
+#: ../document-download-ac.php:94
+msgid "A Coruña"
+msgstr ""
+
+#: ../document-download-ac.php:95
+msgid "Cuenca"
+msgstr ""
+
+#: ../document-download-ac.php:96
+msgid "Girona"
+msgstr ""
+
+#: ../document-download-ac.php:97
+msgid "Granada"
+msgstr ""
+
+#: ../document-download-ac.php:98
+msgid "Guadalajara"
+msgstr ""
+
+#: ../document-download-ac.php:99
+msgid "Gipuzkoa"
+msgstr ""
+
+#: ../document-download-ac.php:100
+msgid "Huelva"
+msgstr ""
+
+#: ../document-download-ac.php:101
+msgid "Huesca"
+msgstr ""
+
+#: ../document-download-ac.php:102
+msgid "Illes Balears"
+msgstr ""
+
+#: ../document-download-ac.php:103
+msgid "Jaén"
+msgstr ""
+
+#: ../document-download-ac.php:104
+msgid "León"
+msgstr ""
+
+#: ../document-download-ac.php:105
+msgid "Lleida"
+msgstr ""
+
+#: ../document-download-ac.php:106
+msgid "Lugo"
+msgstr ""
+
+#: ../document-download-ac.php:107
+msgid "Madrid"
+msgstr ""
+
+#: ../document-download-ac.php:108
+msgid "Málaga"
+msgstr ""
+
+#: ../document-download-ac.php:109
+msgid "Melilla"
+msgstr ""
+
+#: ../document-download-ac.php:110
+msgid "Murcia"
+msgstr ""
+
+#: ../document-download-ac.php:111
+msgid "Navarra"
+msgstr ""
+
+#: ../document-download-ac.php:112
+msgid "Orense"
+msgstr ""
+
+#: ../document-download-ac.php:113
+msgid "Palencia"
+msgstr ""
+
+#: ../document-download-ac.php:114
+msgid "Las Palmas"
+msgstr ""
+
+#: ../document-download-ac.php:115
+msgid "Pontevedra"
+msgstr ""
+
+#: ../document-download-ac.php:116
+msgid "La Rioja"
+msgstr ""
+
+#: ../document-download-ac.php:117
+msgid "Salamanca"
+msgstr ""
+
+#: ../document-download-ac.php:118
+msgid "Segovia"
+msgstr ""
+
+#: ../document-download-ac.php:119
+msgid "Sevilla"
+msgstr ""
+
+#: ../document-download-ac.php:120
+msgid "Soria"
+msgstr ""
+
+#: ../document-download-ac.php:121
+msgid "Tarragona"
+msgstr ""
+
+#: ../document-download-ac.php:122
+msgid "Santa Cruz de Tenerife"
+msgstr ""
+
+#: ../document-download-ac.php:123
+msgid "Teruel"
+msgstr ""
+
+#: ../document-download-ac.php:124
+msgid "Toledo"
+msgstr ""
+
+#: ../document-download-ac.php:125
+msgid "Valencia-València"
+msgstr ""
+
+#: ../document-download-ac.php:126
+msgid "Valladolid"
+msgstr ""
+
+#: ../document-download-ac.php:127
+msgid "Bizkaia"
+msgstr ""
+
+#: ../document-download-ac.php:128
+msgid "Zamora"
+msgstr ""
+
+#: ../document-download-ac.php:129
+msgid "Zaragoza"
+msgstr ""
+
+#: ../document-download-ac.php:131
 msgid "Provincia*"
 msgstr ""
 
-#: ../document-download-ac.php:59
-msgid "País*"
+#: ../document-download-ac.php:133
+msgid "Ciudad*"
 msgstr ""
 
-#: ../document-download-ac.php:60
+#: ../document-download-ac.php:135
 msgid "Acepto la <a href='' target='_blank'>politica de privacidad</a>."
 msgstr ""
 
-#: ../document-download-ac.php:61
+#: ../document-download-ac.php:136
 msgid "Descargar"
 msgstr ""
 
-#: ../document-download-ac.php:167
+#: ../document-download-ac.php:261
 msgid ""
 "Lo sentimos, ha ocurrido un error. Vuelve a intentarlo dentro de un rato."
 msgstr ""
 
-#: ../document-download-ac.php:259
+#: ../document-download-ac.php:355
 msgid ""
 "Muchas gracias, en unos minutos recibirá un email para poder descargar el "
 "documento."
