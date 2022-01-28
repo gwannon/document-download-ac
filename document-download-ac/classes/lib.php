@@ -57,12 +57,13 @@ function docDownloadAcInsertGoogleSheets($user, $media) {
       $_REQUEST['topic'],
       $_REQUEST['sector'],
       $_REQUEST['country'],
-      $_SERVER['HTTP_REFERER']
+      $_SERVER['HTTP_REFERER'],
+      (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] != '' ? $_SERVER['REMOTE_ADDR'] : $_SERVER['HTTP_X_FORWARDED_FOR']),
     ]
   ];
 
   $body = new Google_Service_Sheets_ValueRange(['values' => $values]);
   $params = ['valueInputOption' => "RAW"];
-  $result = $service->spreadsheets_values->append(get_option("_doc_download_ac_sheet_id"), get_option("_doc_download_ac_sheet_page").'!A:Q', $body, $params);
+  $result = $service->spreadsheets_values->append(get_option("_doc_download_ac_sheet_id"), get_option("_doc_download_ac_sheet_page").'!A:R', $body, $params);
   return $result;
 }
