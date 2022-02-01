@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: document-download-ac\n"
-"POT-Creation-Date: 2022-01-26 15:19+0100\n"
-"PO-Revision-Date: 2022-01-26 15:19+0100\n"
+"POT-Creation-Date: 2022-02-01 12:03+0100\n"
+"PO-Revision-Date: 2022-02-01 12:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: jorge@enutt.net\n"
 "Language: es_ES\n"
@@ -27,374 +27,402 @@ msgstr ""
 msgid "Datos guardados correctamente."
 msgstr ""
 
-#: ../admin.php:35
+#: ../admin.php:37
 msgid "Configuración"
 msgstr ""
 
-#: ../admin.php:36
+#: ../admin.php:38
 msgid "Etiquetas disponibles"
 msgstr ""
 
-#: ../admin.php:37
+#: ../admin.php:39
 msgid "Listas disponibles"
 msgstr ""
 
-#: ../admin.php:38
+#: ../admin.php:40
 msgid "Automatizaciones disponibles"
 msgstr ""
 
-#: ../admin.php:39
+#: ../admin.php:41
 msgid "Ficheros"
 msgstr ""
 
-#: ../admin.php:90
+#: ../admin.php:92
 msgid "Media"
 msgstr ""
 
-#: ../admin.php:94
+#: ../admin.php:96
 msgid "URL del WordPress donde se almacenarán los ficheros a descargar"
 msgstr ""
 
-#: ../admin.php:102
+#: ../admin.php:104
 msgid "Active Campaign"
 msgstr ""
 
-#: ../admin.php:106
+#: ../admin.php:108
 msgid "URL de la API de Active Campaign"
 msgstr ""
 
-#: ../admin.php:114
+#: ../admin.php:116
 msgid "Token de la API de Active Campaign"
 msgstr ""
 
-#: ../admin.php:122
+#: ../admin.php:124
 msgid "Prefijos etiquetas permitidas"
 msgstr ""
 
-#: ../admin.php:125 ../admin.php:137 ../admin.php:145
+#: ../admin.php:127 ../admin.php:138 ../admin.php:146
 msgid "Separados por comas"
 msgstr ""
 
-#: ../admin.php:130
+#: ../admin.php:131
 msgid "Código corto"
 msgstr ""
 
-#: ../admin.php:134
+#: ../admin.php:135
 msgid "ID de la automatización por defecto"
 msgstr ""
 
-#: ../admin.php:142
+#: ../admin.php:143
 msgid "ID de la lista por defecto"
 msgstr ""
 
-#: ../admin.php:150
+#: ../admin.php:151
 msgid "Google Sheets"
 msgstr ""
 
-#: ../admin.php:154
+#: ../admin.php:155
 msgid "ID documento de Google Sheet"
 msgstr ""
 
-#: ../admin.php:162
+#: ../admin.php:163
 msgid "ID de página del documento de Google Sheet"
 msgstr ""
 
-#: ../admin.php:170
+#: ../admin.php:171
 msgid "Google Sheets Service Key"
 msgstr ""
 
-#: ../admin.php:180
+#: ../admin.php:181
 msgid "Diseño"
 msgstr ""
 
-#: ../admin.php:184
+#: ../admin.php:185
 msgid "Código CSS"
 msgstr ""
 
-#: ../admin.php:192
+#: ../admin.php:193
+msgid "Cookie contact_id"
+msgstr ""
+
+#: ../admin.php:197
+msgid "Ambito de la cookie"
+msgstr ""
+
+#: ../admin.php:205
+msgid "Duración de la cookie en segundos"
+msgstr ""
+
+#: ../admin.php:212
 msgid "Guardar"
 msgstr ""
 
-#: ../document-download-ac.php:61
-msgid "Nombre*"
+#: ../document-download-ac.php:55
+#, php-format
+msgid "Descarga de %s"
 msgstr ""
 
-#: ../document-download-ac.php:62
-msgid "Apellidos*"
+#: ../document-download-ac.php:56
+#, php-format
+msgid ""
+"Solicita la descarga del documento %s. En breve, te lo enviaremos por correo "
+"electrónico."
 msgstr ""
 
 #: ../document-download-ac.php:64
-msgid "Email*"
+msgid "Nombre*"
 msgstr ""
 
-#: ../document-download-ac.php:66
-msgid "DNI"
+#: ../document-download-ac.php:65
+msgid "Apellidos*"
 msgstr ""
 
 #: ../document-download-ac.php:67
-msgid "Empresa*"
+msgid "Email*"
 msgstr ""
 
-#: ../document-download-ac.php:68
-msgid "CIF"
+#: ../document-download-ac.php:69
+msgid "DNI"
 msgstr ""
 
 #: ../document-download-ac.php:70
-msgid "País"
+msgid "Empresa*"
 msgstr ""
 
 #: ../document-download-ac.php:71
-msgid "España"
-msgstr ""
-
-#: ../document-download-ac.php:72
-msgid "Francia"
+msgid "CIF"
 msgstr ""
 
 #: ../document-download-ac.php:73
-msgid "Alemania"
+msgid "País"
 msgstr ""
 
 #: ../document-download-ac.php:74
-msgid "Portugal"
+msgid "España"
+msgstr ""
+
+#: ../document-download-ac.php:75
+msgid "Francia"
+msgstr ""
+
+#: ../document-download-ac.php:76
+msgid "Alemania"
 msgstr ""
 
 #: ../document-download-ac.php:77
-msgid "Provincia"
-msgstr ""
-
-#: ../document-download-ac.php:78
-msgid "Araba/Álava"
-msgstr ""
-
-#: ../document-download-ac.php:79
-msgid "Albacete"
+msgid "Portugal"
 msgstr ""
 
 #: ../document-download-ac.php:80
-msgid "Alicante-Alacant"
+msgid "Provincia"
 msgstr ""
 
 #: ../document-download-ac.php:81
-msgid "Almería"
+msgid "Araba/Álava"
 msgstr ""
 
 #: ../document-download-ac.php:82
-msgid "Asturias"
+msgid "Albacete"
 msgstr ""
 
 #: ../document-download-ac.php:83
-msgid "Ávila"
+msgid "Alicante-Alacant"
 msgstr ""
 
 #: ../document-download-ac.php:84
-msgid "Badajoz"
+msgid "Almería"
 msgstr ""
 
 #: ../document-download-ac.php:85
-msgid "Barcelona"
+msgid "Asturias"
 msgstr ""
 
 #: ../document-download-ac.php:86
-msgid "Burgos"
+msgid "Ávila"
 msgstr ""
 
 #: ../document-download-ac.php:87
-msgid "Cáceres"
+msgid "Badajoz"
 msgstr ""
 
 #: ../document-download-ac.php:88
-msgid "Cádiz"
+msgid "Barcelona"
 msgstr ""
 
 #: ../document-download-ac.php:89
-msgid "Cantabria"
+msgid "Burgos"
 msgstr ""
 
 #: ../document-download-ac.php:90
-msgid "Castellón-Castelló"
+msgid "Cáceres"
 msgstr ""
 
 #: ../document-download-ac.php:91
-msgid "Ceuta"
+msgid "Cádiz"
 msgstr ""
 
 #: ../document-download-ac.php:92
-msgid "Ciudad Real"
+msgid "Cantabria"
 msgstr ""
 
 #: ../document-download-ac.php:93
-msgid "Córdoba"
+msgid "Castellón-Castelló"
 msgstr ""
 
 #: ../document-download-ac.php:94
-msgid "A Coruña"
+msgid "Ceuta"
 msgstr ""
 
 #: ../document-download-ac.php:95
-msgid "Cuenca"
+msgid "Ciudad Real"
 msgstr ""
 
 #: ../document-download-ac.php:96
-msgid "Girona"
+msgid "Córdoba"
 msgstr ""
 
 #: ../document-download-ac.php:97
-msgid "Granada"
+msgid "A Coruña"
 msgstr ""
 
 #: ../document-download-ac.php:98
-msgid "Guadalajara"
+msgid "Cuenca"
 msgstr ""
 
 #: ../document-download-ac.php:99
-msgid "Gipuzkoa"
+msgid "Girona"
 msgstr ""
 
 #: ../document-download-ac.php:100
-msgid "Huelva"
+msgid "Granada"
 msgstr ""
 
 #: ../document-download-ac.php:101
-msgid "Huesca"
+msgid "Guadalajara"
 msgstr ""
 
 #: ../document-download-ac.php:102
-msgid "Illes Balears"
+msgid "Gipuzkoa"
 msgstr ""
 
 #: ../document-download-ac.php:103
-msgid "Jaén"
+msgid "Huelva"
 msgstr ""
 
 #: ../document-download-ac.php:104
-msgid "León"
+msgid "Huesca"
 msgstr ""
 
 #: ../document-download-ac.php:105
-msgid "Lleida"
+msgid "Illes Balears"
 msgstr ""
 
 #: ../document-download-ac.php:106
-msgid "Lugo"
+msgid "Jaén"
 msgstr ""
 
 #: ../document-download-ac.php:107
-msgid "Madrid"
+msgid "León"
 msgstr ""
 
 #: ../document-download-ac.php:108
-msgid "Málaga"
+msgid "Lleida"
 msgstr ""
 
 #: ../document-download-ac.php:109
-msgid "Melilla"
+msgid "Lugo"
 msgstr ""
 
 #: ../document-download-ac.php:110
-msgid "Murcia"
+msgid "Madrid"
 msgstr ""
 
 #: ../document-download-ac.php:111
-msgid "Navarra"
+msgid "Málaga"
 msgstr ""
 
 #: ../document-download-ac.php:112
-msgid "Orense"
+msgid "Melilla"
 msgstr ""
 
 #: ../document-download-ac.php:113
-msgid "Palencia"
+msgid "Murcia"
 msgstr ""
 
 #: ../document-download-ac.php:114
-msgid "Las Palmas"
+msgid "Navarra"
 msgstr ""
 
 #: ../document-download-ac.php:115
-msgid "Pontevedra"
+msgid "Orense"
 msgstr ""
 
 #: ../document-download-ac.php:116
-msgid "La Rioja"
+msgid "Palencia"
 msgstr ""
 
 #: ../document-download-ac.php:117
-msgid "Salamanca"
+msgid "Las Palmas"
 msgstr ""
 
 #: ../document-download-ac.php:118
-msgid "Segovia"
+msgid "Pontevedra"
 msgstr ""
 
 #: ../document-download-ac.php:119
-msgid "Sevilla"
+msgid "La Rioja"
 msgstr ""
 
 #: ../document-download-ac.php:120
-msgid "Soria"
+msgid "Salamanca"
 msgstr ""
 
 #: ../document-download-ac.php:121
-msgid "Tarragona"
+msgid "Segovia"
 msgstr ""
 
 #: ../document-download-ac.php:122
-msgid "Santa Cruz de Tenerife"
+msgid "Sevilla"
 msgstr ""
 
 #: ../document-download-ac.php:123
-msgid "Teruel"
+msgid "Soria"
 msgstr ""
 
 #: ../document-download-ac.php:124
-msgid "Toledo"
+msgid "Tarragona"
 msgstr ""
 
 #: ../document-download-ac.php:125
-msgid "Valencia-València"
+msgid "Santa Cruz de Tenerife"
 msgstr ""
 
 #: ../document-download-ac.php:126
-msgid "Valladolid"
+msgid "Teruel"
 msgstr ""
 
 #: ../document-download-ac.php:127
-msgid "Bizkaia"
+msgid "Toledo"
 msgstr ""
 
 #: ../document-download-ac.php:128
-msgid "Zamora"
+msgid "Valencia-València"
 msgstr ""
 
 #: ../document-download-ac.php:129
-msgid "Zaragoza"
+msgid "Valladolid"
+msgstr ""
+
+#: ../document-download-ac.php:130
+msgid "Bizkaia"
 msgstr ""
 
 #: ../document-download-ac.php:131
+msgid "Zamora"
+msgstr ""
+
+#: ../document-download-ac.php:132
+msgid "Zaragoza"
+msgstr ""
+
+#: ../document-download-ac.php:134
 msgid "Provincia*"
 msgstr ""
 
-#: ../document-download-ac.php:133
+#: ../document-download-ac.php:136
 msgid "Ciudad*"
 msgstr ""
 
-#: ../document-download-ac.php:135
+#: ../document-download-ac.php:138
+msgid "Deseo recibir actualizaciones de este documento."
+msgstr ""
+
+#: ../document-download-ac.php:139
 msgid "Acepto la <a href='' target='_blank'>politica de privacidad</a>."
 msgstr ""
 "Acepto la <a href='/politica-de-privacidad/' target='_blank'>politica de "
 "privacidad</a>."
 
-#: ../document-download-ac.php:136
+#: ../document-download-ac.php:140
 msgid "Descargar"
 msgstr ""
 
-#: ../document-download-ac.php:261
+#: ../document-download-ac.php:269
 msgid ""
 "Lo sentimos, ha ocurrido un error. Vuelve a intentarlo dentro de un rato."
 msgstr ""
 
-#: ../document-download-ac.php:355
+#: ../document-download-ac.php:366
 msgid ""
 "Muchas gracias, en unos minutos recibirá un email para poder descargar el "
 "documento."

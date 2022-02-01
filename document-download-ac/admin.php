@@ -25,6 +25,8 @@ function docDownloadAcAdmin() {
     update_option('_doc_download_ac_sheet_page', $_POST['_doc_download_ac_sheet_page']);	
     update_option('_doc_download_ac_sheet_service_key', $_POST['_doc_download_ac_sheet_service_key']);
     update_option('_doc_download_ac_api_tags_prefix', $_POST['_doc_download_ac_api_tags_prefix']);
+    update_option('_doc_download_cookie_domain', $_POST['_doc_download_cookie_domain']);
+    update_option('_doc_download_cookie_time', $_POST['_doc_download_cookie_time']);
     
     $f = fopen(dirname(__FILE__)."/service_key.json", "w+");
     fwrite($f, stripslashes($_POST['_doc_download_ac_sheet_service_key']));
@@ -125,7 +127,6 @@ function docDownloadAcAdmin() {
           <input type="text" name="_doc_download_ac_api_tags_prefix" value="<?php echo get_option("_doc_download_ac_api_tags_prefix"); ?>" placeholder='<?php _e("Separados por comas", 'doc_download_ac'); ?>' style="width: 100%;" />
         </td>
       </tr>
-
       <tr bgcolor="cecece">
         <td colspan="2"><h2><?php _e("Código corto", "doc_download_ac"); ?></h2></td>
       </tr>
@@ -187,8 +188,27 @@ function docDownloadAcAdmin() {
           <textarea name="_doc_download_ac_extra_css" style="width: 100%; min-height: 150px;"><?php echo get_option("_doc_download_ac_extra_css"); ?></textarea>
         </td>
       </tr>
-    </table>
 
+      <tr>
+        <td colspan="2"><h2><?php _e("Cookie contact_id", "doc_download_ac"); ?></h2></td>
+      </tr>
+      <tr>
+        <td width="25%" valign="top">
+          <h4><?php _e("Ambito de la cookie", "doc_download_ac"); ?></h4>
+        </td>
+        <td width="75%" valign="top">
+          <input type="text" name="_doc_download_cookie_domain" value="<?php echo get_option("_doc_download_cookie_domain"); ?>" style="width: 100%;" />
+        </td>
+      </tr>
+      <tr>
+      <td width="25%" valign="top">
+          <h4><?php _e("Duración de la cookie en segundos", "doc_download_ac"); ?></h4>
+        </td>
+        <td width="75%" valign="top">
+          <input type="text" name="_doc_download_cookie_time" value="<?php echo get_option("_doc_download_cookie_time"); ?>" style="width: 100%;" />
+        </td>
+      </tr>
+    </table>
     <br/><br/><input type="submit" name="send" class="button button-primary" value="<?php _e("Guardar", "doc_download_ac"); ?>" />
 	</form>
 	<?php }

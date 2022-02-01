@@ -3,7 +3,7 @@
  * Plugin Name: Document Download Active Campaign
  * Plugin URI:  https://www.enutt.net/
  * Description: Codigo corto para la descarga de documentos.
- * Version:     1.0
+ * Version:     1.1
  * Author:      Eñutt
  * Author URI:  https://www.enutt.net/
  * License:     GNU General Public License v2 or later
@@ -11,7 +11,7 @@
  * Text Domain: doc_download_ac
  *
  * PHP 7.3
- * WordPress 5.9
+ * WordPress 5.5.3
  */
 
 ini_set("display_errors", 1);
@@ -52,88 +52,93 @@ function docDownloadAcForm($params = array(), $content = null) {
   <div class="ac_download-pop-up-bg pop-up-bg<?=$media['id']; ?><?=" ".$params['class']; ?>">
     <div class="pop-up">
       <div class="pop-up-close">✕</div>
+      <h3><?php echo (isset($params['title']) && $params['title'] != '' ? $params['title'] : sprintf(__("Descarga de %s", "doc_download_ac"), $media['title'] )); ?></h3>
+      <p><?php echo (isset($params['text']) && $params['text'] != '' ? $params['text'] : sprintf(__("Solicita la descarga del documento %s. En breve, te lo enviaremos por correo electrónico.", "doc_download_ac"), $media['title'] )); ?></p>
       <form class="ac_download-form" id="ac_download<?=$media['id']; ?>">
-        <input type="hidden" name="media_id" value="<?=$media['id']; ?>" />
-        <input type="hidden" name="lists" value="<?php echo (isset($params['list']) ? $params['list'] : get_option("_doc_download_ac_default_list")); ?>" />
-        <input type="hidden" name="automations" value="<?php echo (isset($params['automation']) ? $params['automation'] : get_option("_doc_download_ac_default_autom")); ?>" />   
-        <input type="hidden" name="tags" value="<?=$params['tag']; ?>" />
-        <?php if($params['format'] >= 2) { ?>
-          <input type="text" name="firstname" value="" placeholder='<?php _e("Nombre*", "doc_download_ac"); ?>' required /><br/>
-          <input type="text" name="lastname" value="" placeholder='<?php _e("Apellidos*", "doc_download_ac"); ?>' required /><br/>
-        <?php } ?>
-        <input type="email" name="email" value="" placeholder='<?php _e("Email*", "doc_download_ac"); ?>' required /><br/>
-        <?php if($params['format'] >= 3) { ?>
-          <input type="text" name="dni" value="" placeholder='<?php _e("DNI", "doc_download_ac"); ?>' /><br/>
-          <input type="text" name="company" value="" placeholder='<?php _e("Empresa*", "doc_download_ac"); ?>' required /><br/>
-          <input type="text" name="company_cif" value="" placeholder='<?php _e("CIF", "doc_download_ac"); ?>' /><br/>
-          <select name="company_country" required>
-            <option value=""><?php _e("País"); ?></option>
-            <option value="España"><?php _e("España"); ?></option>      
-            <option value="Francia"><?php _e("Francia"); ?></option>      
-            <option value="Alemania"><?php _e("Alemania"); ?></option>      
-            <option value="Portugal"><?php _e("Portugal"); ?></option>      
-          </select><br/>          
-          <select name="company_state_spain" style="display: none;" disabled="disabled">
-            <option value=""><?php _e("Provincia"); ?></option>
-            <option value="Araba"><?php _e("Araba/Álava"); ?></option>
-            <option value="Albacete"><?php _e("Albacete"); ?></option>
-            <option value="Alicante"><?php _e("Alicante-Alacant"); ?></option>
-            <option value="Almería"><?php _e("Almería"); ?></option>
-            <option value="Asturias"><?php _e("Asturias"); ?></option>
-            <option value="Ávila"><?php _e("Ávila"); ?></option>
-            <option value="Badajoz"><?php _e("Badajoz"); ?></option>
-            <option value="Barcelona"><?php _e("Barcelona"); ?></option>
-            <option value="Burgos"><?php _e("Burgos"); ?></option>
-            <option value="Cáceres"><?php _e("Cáceres"); ?></option>
-            <option value="Cádiz"><?php _e("Cádiz"); ?></option>
-            <option value="Cantabria"><?php _e("Cantabria"); ?></option>
-            <option value="Castellón"><?php _e("Castellón-Castelló"); ?></option>
-            <option value="Ceuta"><?php _e("Ceuta"); ?></option>
-            <option value="Ciudad Real"><?php _e("Ciudad Real"); ?></option>
-            <option value="Córdoba"><?php _e("Córdoba"); ?></option>
-            <option value="A Coruña"><?php _e("A Coruña"); ?></option>
-            <option value="Cuenca"><?php _e("Cuenca"); ?></option>
-            <option value="Girona"><?php _e("Girona"); ?></option>
-            <option value="Granada"><?php _e("Granada"); ?></option>
-            <option value="Guadalajara"><?php _e("Guadalajara"); ?></option>
-            <option value="Gipuzkoa"><?php _e("Gipuzkoa"); ?></option>
-            <option value="Huelva"><?php _e("Huelva"); ?></option>
-            <option value="Huesca"><?php _e("Huesca"); ?></option>
-            <option value="Islas Baleares"><?php _e("Illes Balears"); ?></option>
-            <option value="Jaén"><?php _e("Jaén"); ?></option>
-            <option value="León"><?php _e("León"); ?></option>
-            <option value="Lleida"><?php _e("Lleida"); ?></option>
-            <option value="Lugo"><?php _e("Lugo"); ?></option>
-            <option value="Madrid"><?php _e("Madrid"); ?></option>
-            <option value="Málaga"><?php _e("Málaga"); ?></option>
-            <option value="Melilla"><?php _e("Melilla"); ?></option>
-            <option value="Murcia"><?php _e("Murcia"); ?></option>
-            <option value="Navarra"><?php _e("Navarra"); ?></option>
-            <option value="Ourense"><?php _e("Orense"); ?></option>
-            <option value="Palencia"><?php _e("Palencia"); ?></option>
-            <option value="Las Palmas"><?php _e("Las Palmas"); ?></option>
-            <option value="Pontevedra"><?php _e("Pontevedra"); ?></option>
-            <option value="La Rioja"><?php _e("La Rioja"); ?></option>
-            <option value="Salamanca"><?php _e("Salamanca"); ?></option>
-            <option value="Segovia"><?php _e("Segovia"); ?></option>
-            <option value="Sevilla"><?php _e("Sevilla"); ?></option>
-            <option value="Soria"><?php _e("Soria"); ?></option>
-            <option value="Tarragona"><?php _e("Tarragona"); ?></option>
-            <option value="Santa Cruz de Tenerife"><?php _e("Santa Cruz de Tenerife"); ?></option>
-            <option value="Teruel"><?php _e("Teruel"); ?></option>
-            <option value="Toledo"><?php _e("Toledo"); ?></option>
-            <option value="Valencia"><?php _e("Valencia-València"); ?></option>
-            <option value="Valladolid"><?php _e("Valladolid"); ?></option>
-            <option value="Bizkaia"><?php _e("Bizkaia"); ?></option>
-            <option value="Zamora"><?php _e("Zamora"); ?></option>
-            <option value="Zaragoza"><?php _e("Zaragoza"); ?></option>   
-          </select>
-          <input type="text" name="company_state" value="" placeholder='<?php _e("Provincia*", "doc_download_ac"); ?>' disabled="disabled" required />
-          <br/>
-          <input type="text" name="company_city" value="" placeholder='<?php _e("Ciudad*", "doc_download_ac"); ?>' required /><br/>
-        <?php } ?>
-        <input type="checkbox" name="privacidad" value="1" required /> <?php _e("Acepto la <a href='' target='_blank'>politica de privacidad</a>.", "doc_download_ac"); ?><br/>
-        <button type="submit" name="download"><?php _e("Descargar", "doc_download_ac"); ?></button>
+        <div class="ac_download-innerform">
+          <input type="hidden" name="media_id" value="<?=$media['id']; ?>" />
+          <input type="hidden" name="lists" value="<?php echo (isset($params['list']) ? $params['list'] : get_option("_doc_download_ac_default_list")); ?>" />
+          <input type="hidden" name="automations" value="<?php echo (isset($params['automation']) ? $params['automation'] : get_option("_doc_download_ac_default_autom")); ?>" />   
+          <input type="hidden" name="tags" value="<?=$params['tag']; ?>" />
+          <?php if($params['format'] >= 2) { ?>
+            <input type="text" name="firstname" value="" placeholder='<?php _e("Nombre*", "doc_download_ac"); ?>' required /><br/>
+            <input type="text" name="lastname" value="" placeholder='<?php _e("Apellidos*", "doc_download_ac"); ?>' required /><br/>
+          <?php } ?>
+          <input type="email" name="email" value="" placeholder='<?php _e("Email*", "doc_download_ac"); ?>' required /><br/>
+          <?php if($params['format'] >= 3) { ?>
+            <input type="text" name="dni" value="" placeholder='<?php _e("DNI", "doc_download_ac"); ?>' /><br/>
+            <input type="text" name="company" value="" placeholder='<?php _e("Empresa*", "doc_download_ac"); ?>' required /><br/>
+            <input type="text" name="company_cif" value="" placeholder='<?php _e("CIF", "doc_download_ac"); ?>' /><br/>
+            <select name="company_country" required>
+              <option value=""><?php _e("País"); ?></option>
+              <option value="España"><?php _e("España"); ?></option>      
+              <option value="Francia"><?php _e("Francia"); ?></option>      
+              <option value="Alemania"><?php _e("Alemania"); ?></option>      
+              <option value="Portugal"><?php _e("Portugal"); ?></option>      
+            </select><br/>          
+            <select name="company_state_spain" style="display: none;" disabled="disabled">
+              <option value=""><?php _e("Provincia"); ?></option>
+              <option value="Araba"><?php _e("Araba/Álava"); ?></option>
+              <option value="Albacete"><?php _e("Albacete"); ?></option>
+              <option value="Alicante"><?php _e("Alicante-Alacant"); ?></option>
+              <option value="Almería"><?php _e("Almería"); ?></option>
+              <option value="Asturias"><?php _e("Asturias"); ?></option>
+              <option value="Ávila"><?php _e("Ávila"); ?></option>
+              <option value="Badajoz"><?php _e("Badajoz"); ?></option>
+              <option value="Barcelona"><?php _e("Barcelona"); ?></option>
+              <option value="Burgos"><?php _e("Burgos"); ?></option>
+              <option value="Cáceres"><?php _e("Cáceres"); ?></option>
+              <option value="Cádiz"><?php _e("Cádiz"); ?></option>
+              <option value="Cantabria"><?php _e("Cantabria"); ?></option>
+              <option value="Castellón"><?php _e("Castellón-Castelló"); ?></option>
+              <option value="Ceuta"><?php _e("Ceuta"); ?></option>
+              <option value="Ciudad Real"><?php _e("Ciudad Real"); ?></option>
+              <option value="Córdoba"><?php _e("Córdoba"); ?></option>
+              <option value="A Coruña"><?php _e("A Coruña"); ?></option>
+              <option value="Cuenca"><?php _e("Cuenca"); ?></option>
+              <option value="Girona"><?php _e("Girona"); ?></option>
+              <option value="Granada"><?php _e("Granada"); ?></option>
+              <option value="Guadalajara"><?php _e("Guadalajara"); ?></option>
+              <option value="Gipuzkoa"><?php _e("Gipuzkoa"); ?></option>
+              <option value="Huelva"><?php _e("Huelva"); ?></option>
+              <option value="Huesca"><?php _e("Huesca"); ?></option>
+              <option value="Islas Baleares"><?php _e("Illes Balears"); ?></option>
+              <option value="Jaén"><?php _e("Jaén"); ?></option>
+              <option value="León"><?php _e("León"); ?></option>
+              <option value="Lleida"><?php _e("Lleida"); ?></option>
+              <option value="Lugo"><?php _e("Lugo"); ?></option>
+              <option value="Madrid"><?php _e("Madrid"); ?></option>
+              <option value="Málaga"><?php _e("Málaga"); ?></option>
+              <option value="Melilla"><?php _e("Melilla"); ?></option>
+              <option value="Murcia"><?php _e("Murcia"); ?></option>
+              <option value="Navarra"><?php _e("Navarra"); ?></option>
+              <option value="Ourense"><?php _e("Orense"); ?></option>
+              <option value="Palencia"><?php _e("Palencia"); ?></option>
+              <option value="Las Palmas"><?php _e("Las Palmas"); ?></option>
+              <option value="Pontevedra"><?php _e("Pontevedra"); ?></option>
+              <option value="La Rioja"><?php _e("La Rioja"); ?></option>
+              <option value="Salamanca"><?php _e("Salamanca"); ?></option>
+              <option value="Segovia"><?php _e("Segovia"); ?></option>
+              <option value="Sevilla"><?php _e("Sevilla"); ?></option>
+              <option value="Soria"><?php _e("Soria"); ?></option>
+              <option value="Tarragona"><?php _e("Tarragona"); ?></option>
+              <option value="Santa Cruz de Tenerife"><?php _e("Santa Cruz de Tenerife"); ?></option>
+              <option value="Teruel"><?php _e("Teruel"); ?></option>
+              <option value="Toledo"><?php _e("Toledo"); ?></option>
+              <option value="Valencia"><?php _e("Valencia-València"); ?></option>
+              <option value="Valladolid"><?php _e("Valladolid"); ?></option>
+              <option value="Bizkaia"><?php _e("Bizkaia"); ?></option>
+              <option value="Zamora"><?php _e("Zamora"); ?></option>
+              <option value="Zaragoza"><?php _e("Zaragoza"); ?></option>   
+            </select>
+            <input type="text" name="company_state" value="" placeholder='<?php _e("Provincia*", "doc_download_ac"); ?>' disabled="disabled" required />
+            <br/>
+            <input type="text" name="company_city" value="" placeholder='<?php _e("Ciudad*", "doc_download_ac"); ?>' required /><br/>
+          <?php } ?>
+          <?php if(isset($params['update']) && $params['update'] == 1) { ?><input type="checkbox" name="update" value="1" /> <?php _e("Deseo recibir actualizaciones de este documento.", "doc_download_ac"); ?><br/><?php } ?>
+          <input type="checkbox" name="privacy" value="1" required /> <?php _e("Acepto la <a href='' target='_blank'>politica de privacidad</a>.", "doc_download_ac"); ?><br/>
+          <button type="submit" name="download"><?php _e("Descargar", "doc_download_ac"); ?></button>
+        </div>
         <p class="ac_download-response"></p>
       </form>
     </div>
@@ -198,6 +203,7 @@ function docDownloadAcForm($params = array(), $content = null) {
       jQuery(".pop-up-bg<?=$media['id']; ?>").toggleClass("opened");
       jQuery("#ac_download<?=$media['id']; ?> .ac_download-response").html("");
       jQuery("#ac_download<?=$media['id']; ?> .ac_download-response").removeClass("loading");
+      jQuery("#ac_download<?=$media['id']; ?> .ac_download-innerform").css("display", "block");
     });
 
     jQuery("#ac_download<?=$media['id']; ?> select[name=company_country]").change(function() {
@@ -217,7 +223,7 @@ function docDownloadAcForm($params = array(), $content = null) {
 
 		jQuery("#ac_download<?=$media['id']; ?>").submit(function(event) {
 			event.preventDefault();
-      console.log(jQuery("#ac_download<?=$media['id']; ?> select[name=company_country]").val());
+      //console.log(jQuery("#ac_download<?=$media['id']; ?> select[name=company_country]").val());
       jQuery.ajax({
         url : '/wp-admin/admin-ajax.php',
         data : {
@@ -239,6 +245,7 @@ function docDownloadAcForm($params = array(), $content = null) {
           <?php if(isset($params['topic']) && $params['topic'] != "") { ?>topic: '<?=$params['topic']; ?>',<?php } ?>
           <?php if(isset($params['sector']) && $params['sector'] != "") { ?>sector: '<?=$params['sector']; ?>',<?php } ?>
           <?php if(isset($params['country']) && $params['country'] != "") { ?>country: '<?=$params['country']; ?>',<?php } ?>
+          <?php if(isset($params['update']) && $params['update'] == 1) { ?>update: (jQuery("#ac_download<?=$media['id']; ?> input[name=update]").is(':checked') ? "1" : ""),<?php } ?>
         },
         type : 'GET',
         dataType : 'json',
@@ -250,10 +257,11 @@ function docDownloadAcForm($params = array(), $content = null) {
         },
         success : function(json) {
           //console.log("Exito");
+          jQuery("#ac_download<?=$media['id']; ?> .ac_download-innerform").css("display", "none");
           jQuery("#ac_download<?=$media['id']; ?> input[name=email], #ac_download<?=$media['id']; ?> input[name=firstname], #ac_download<?=$media['id']; ?> input[name=lastname], #ac_download<?=$media['id']; ?> input[name=dni], #ac_download<?=$media['id']; ?> input[name=company], #ac_download<?=$media['id']; ?> input[name=company_cif], #ac_download<?=$media['id']; ?> input[name=company_city], #ac_download<?=$media['id']; ?> input[name=company_state]").val("");
-          
           jQuery("#ac_download<?=$media['id']; ?> select[name=company_country]").val("");
           jQuery("#ac_download<?=$media['id']; ?> select[name=company_state_spain]").val("");
+          jQuery("#ac_download<?=$media['id']; ?> input[type=checkbox]").prop( "checked", false );
           jQuery("#ac_download<?=$media['id']; ?> .ac_download-response").html(json.data.message);
         },
         error : function(xhr, status) {
@@ -310,6 +318,9 @@ function docDownloadAcAjax() {
   //Obtenemos el usuario y el medio
   $user = new UserAC($_REQUEST['email']);
   $media = docDownloadAcGetMediaById($_REQUEST['media_id']);
+
+  //Guardamos el contact_id en una cookie
+  setcookie('contact_id', $user->id, time()+get_option("_doc_download_cookie_time"), "/", get_option("_doc_download_cookie_domain"));
 
   //Establecemos los datos del usuario y del documento
   if(isset($_REQUEST['firstname']) && $_REQUEST['firstname'] != '' && $user->nombre == '') $user->setNombre($_REQUEST['firstname']);
