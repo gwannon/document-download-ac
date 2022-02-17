@@ -185,7 +185,7 @@ function docDownloadAcAdmin() {
           <h4><?php _e("Código CSS", "doc_download_ac"); ?></h4>
         </td>
         <td width="75%" valign="top">
-          <textarea name="_doc_download_ac_extra_css" style="width: 100%; min-height: 150px;"><?php echo get_option("_doc_download_ac_extra_css"); ?></textarea>
+          <textarea name="_doc_download_ac_extra_css" style="width: 100%; min-height: 150px;"><?php echo stripslashes(get_option("_doc_download_ac_extra_css")); ?></textarea>
         </td>
       </tr>
 

@@ -43,39 +43,46 @@ $lists = array();
 
 function docDownloadAcForm($params = array(), $content = null) {
   global $post;
+  
+  
+  
+  
   ob_start();
   $media = docDownloadAcGetMediaById($params['doc_id']);
   if(!$media) return ''; //Chequeamos que exista el archivo ?>
 
 
   <button class="ac_download-pop-up-open pop-up-open<?=$media['id']; ?><?=" ".$params['class']; ?>"><?=$content; ?></button>
-  <div class="ac_download-pop-up-bg pop-up-bg<?=$media['id']; ?><?=" ".$params['class']; ?>">
+  <div class="ac_download-pop-up-bg pop-up-bg<?=$media['id']; ?><?=" ".$params['class']; ?> <?=" form".$params['format']; ?>">
     <div class="pop-up">
       <div class="pop-up-close">✕</div>
       <h3><?php echo (isset($params['title']) && $params['title'] != '' ? $params['title'] : sprintf(__("Descarga de %s", "doc_download_ac"), $media['title'] )); ?></h3>
-      <p><?php echo (isset($params['text']) && $params['text'] != '' ? $params['text'] : sprintf(__("Solicita la descarga del documento %s. En breve, te lo enviaremos por correo electrónico.", "doc_download_ac"), $media['title'] )); ?></p>
       <form class="ac_download-form" id="ac_download<?=$media['id']; ?>">
-        <div class="ac_download-innerform">
+      	<div class="ac_download-innerform">
+        	<p><?php echo (isset($params['text']) && $params['text'] != '' ? $params['text'] : sprintf(__("Solicita la descarga del documento %s. En breve, te lo enviaremos por correo electrónico.", "doc_download_ac"), $media['title'] )); ?></p>
           <input type="hidden" name="media_id" value="<?=$media['id']; ?>" />
           <input type="hidden" name="lists" value="<?php echo (isset($params['list']) ? $params['list'] : get_option("_doc_download_ac_default_list")); ?>" />
           <input type="hidden" name="automations" value="<?php echo (isset($params['automation']) ? $params['automation'] : get_option("_doc_download_ac_default_autom")); ?>" />   
           <input type="hidden" name="tags" value="<?=$params['tag']; ?>" />
           <?php if($params['format'] >= 2) { ?>
-            <input type="text" name="firstname" value="" placeholder='<?php _e("Nombre*", "doc_download_ac"); ?>' required /><br/>
-            <input type="text" name="lastname" value="" placeholder='<?php _e("Apellidos*", "doc_download_ac"); ?>' required /><br/>
+            <input type="text" name="firstname" value="" placeholder='<?php _e("Nombre *", "doc_download_ac"); ?>' required />
+            <input type="text" name="lastname" value="" placeholder='<?php _e("Apellidos *", "doc_download_ac"); ?>' required />
           <?php } ?>
-          <input type="email" name="email" value="" placeholder='<?php _e("Email*", "doc_download_ac"); ?>' required /><br/>
+          <input type="email" name="email" value="" placeholder='<?php _e("Email *", "doc_download_ac"); ?>' required />
           <?php if($params['format'] >= 3) { ?>
-            <input type="text" name="dni" value="" placeholder='<?php _e("DNI", "doc_download_ac"); ?>' /><br/>
-            <input type="text" name="company" value="" placeholder='<?php _e("Empresa*", "doc_download_ac"); ?>' required /><br/>
-            <input type="text" name="company_cif" value="" placeholder='<?php _e("CIF", "doc_download_ac"); ?>' /><br/>
+            <input type="text" name="dni" value="" placeholder='<?php _e("DNI", "doc_download_ac"); ?>' />
+            <input type="text" name="company" value="" placeholder='<?php _e("Empresa *", "doc_download_ac"); ?>' required />
+            <input type="text" name="company_cif" value="" placeholder='<?php _e("CIF", "doc_download_ac"); ?>' />
+            
+            
+            
             <select name="company_country" required>
               <option value=""><?php _e("País"); ?></option>
-              <option value="España"><?php _e("España"); ?></option>      
-              <option value="Francia"><?php _e("Francia"); ?></option>      
-              <option value="Alemania"><?php _e("Alemania"); ?></option>      
-              <option value="Portugal"><?php _e("Portugal"); ?></option>      
-            </select><br/>          
+            	<?php $paises = ["España", "Angola", "Argelia", "Benin", "Botsuana", "Burkina Faso", "Burundi", "Cabo Verde", "Camerún", "Chad", "Comoras", "Costa De Marfil", "Egipto", "Eritrea", "Etiopía", "Gabón", "Gambia", "Ghana", "Guinea", "Guinea Ecuatorial", "Guinea-bissau", "Kenia", "Lesoto", "Liberia", "Libia", "Madagascar", "Malaui", "Mali", "Marruecos", "Mauricio", "Mauritania", "Mozambique", "Namibia", "Níger", "Nigeria", "República Centroafricana", "República Del Congo", "República Democrática Del Congo", "Ruanda", "Santo Tomé Y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Somalia", "Suazilandia", "Sudáfrica", "Sudán", "Sudán Del Sur", "Tanzania", "Togo", "Túnez", "Uganda", "Yibuti", "Zambia", "Zimbabue", "Antigua Y Barbuda", "Argentina", "Bahamas", "Barbados", "Belice", "Bolivia", "Brasil", "Canadá", "Chile", "Colombia", "Costa Rica", "Cuba", "Dominica", "Ecuador", "El Salvador", "Estados Unidos", "Granada", "Guatemala", "Guyana", "Haití", "Honduras", "Jamaica", "México", "Nicaragua", "Panamá", "Paraguay", "Perú", "Puerto Rico", "República Dominicana", "San Cristóbal Y Nieves", "San Vicente Y Las Granadinas", "Santa Lucía", "Surinam", "Trinidad Y Tobago", "Uruguay", "Venezuela", "Afganistán", "Arabia Saudita", "Bangladés", "Baréin", "Brunei", "Bután", "Camboya", "Catar", "China", "Chipre", "Corea Del Norte", "Corea Del Sur", "Emiratos Arabes Unidos", "Filipinas", "India", "Indonesia", "Irán", "Iraq", "Israel", "Japón", "Jordania", "Kazajistán", "Kirguistán", "Kuwait", "Laos", "Líbano", "Malasia", "Maldivas", "Mongolia", "Myanmar (Birmania)", "Nepal", "Omán", "Pakistán", "Palestina", "Siria", "Sri Lanka", "Tailandia", "Tayikistán", "Timor Oriental", "Turkmenistán", "Turquía", "Uzbekistán", "Vietnam", "Yemen", "Albania", "Alemania", "Andorra", "Armenia", "Austria", "Azerbaiyán", "Bélgica", "Bielorrusia", "Bosnia Y Herzegovina", "Bulgaria", "Croacia", "Dinamarca", "Eslovaquia", "Eslovenia",  "Estonia", "Finlandia", "Francia", "Georgia", "Grecia", "Hungría", "Irlanda", "Islandia", "Italia", "Letonia", "Liechtenstein", "Lituania", "Luxemburgo", "Malta", "Moldavia", "Mónaco", "Montenegro", "Noruega", "Países Bajos", "Polonia", "Portugal", "Reino Unido", "República Checa", "República De Macedonia", "Rumania", "Rusia", "San Marino", "Serbia", "Suecia", "Suiza", "Ucrania", "Australia", "Fiyi", "Islas Marshall", "Islas Salomón", "Kiribati", "Micronesia", "Nauru", "Nueva Zelanda", "Palaos", "Papúa Nueva Guinea", "Samoa", "Tonga", "Tuvalu", "Vanuatu"];
+            	foreach ($paises as $pais) { ?>
+              	<option value="<?=$pais; ?>"><?php _e($pais); ?></option>      
+							<?php } ?>     
+            </select>        
             <select name="company_state_spain" style="display: none;" disabled="disabled">
               <option value=""><?php _e("Provincia"); ?></option>
               <option value="Araba"><?php _e("Araba/Álava"); ?></option>
@@ -131,12 +138,11 @@ function docDownloadAcForm($params = array(), $content = null) {
               <option value="Zamora"><?php _e("Zamora"); ?></option>
               <option value="Zaragoza"><?php _e("Zaragoza"); ?></option>   
             </select>
-            <input type="text" name="company_state" value="" placeholder='<?php _e("Provincia*", "doc_download_ac"); ?>' disabled="disabled" required />
-            <br/>
-            <input type="text" name="company_city" value="" placeholder='<?php _e("Ciudad*", "doc_download_ac"); ?>' required /><br/>
+            <input type="text" name="company_state" value="" placeholder='<?php _e("Provincia *", "doc_download_ac"); ?>' disabled="disabled" required />
+            <input type="text" name="company_city" value="" placeholder='<?php _e("Ciudad *", "doc_download_ac"); ?>' required />
           <?php } ?>
-          <?php if(isset($params['update']) && $params['update'] == 1) { ?><input type="checkbox" name="update" value="1" /> <?php _e("Deseo recibir actualizaciones de este documento.", "doc_download_ac"); ?><br/><?php } ?>
-          <input type="checkbox" name="privacy" value="1" required /> <?php _e("Acepto la <a href='' target='_blank'>politica de privacidad</a>.", "doc_download_ac"); ?><br/>
+          <?php if(isset($params['update']) && $params['update'] == 1) { ?><p class="form_cb"><input type="checkbox" name="update" value="1" /> <?php _e("Deseo recibir actualizaciones de este documento.", "doc_download_ac"); ?></p><?php } ?>
+          <p class="form_cb"><input type="checkbox" name="privacy" value="1" required /> <?php _e("Acepto la <a href='' target='_blank'>politica de privacidad</a>.", "doc_download_ac"); ?></p>
           <button type="submit" name="download"><?php _e("Descargar", "doc_download_ac"); ?></button>
         </div>
         <p class="ac_download-response"></p>
@@ -151,8 +157,6 @@ function docDownloadAcForm($params = array(), $content = null) {
       left: 0px;
       width: 100%;
       height: 100vh;
-      z-index: 1000;
-      background-color: #4a4a4abf;
       display: none;
     }
 
@@ -195,7 +199,7 @@ function docDownloadAcForm($params = array(), $content = null) {
     }
 
     /* Extra CSS */
-    <?php echo get_option("_doc_download_ac_extra_css"); ?>
+    <?php echo stripslashes(get_option("_doc_download_ac_extra_css")); ?>
   </style>
   <script>
     jQuery(".pop-up-open<?=$media['id']; ?>, .pop-up-bg<?=$media['id']; ?> .pop-up-close").click(function(e) {
@@ -356,6 +360,8 @@ function docDownloadAcAjax() {
 
   //Metemos en Google Sheets-----------------------
   if(get_option("_doc_download_ac_sheet_id") != '') {
+	//  error_reporting(E_ALL);
+	//  ini_set("display_errors", 1);
     docDownloadAcInsertGoogleSheets($user, $media);
   }
   
